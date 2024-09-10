@@ -1,52 +1,41 @@
-<body>
+Overview
 
-    <h1>Special Number Checker</h1>
+This C++ program checks if a given number can be represented as the sum of consecutive positive integers starting from 1. If the number is a special number (i.e., it can be expressed as such a sum), the program will output a sequence of additions that equal the number. If not, it will indicate that the number is not special.
 
-    <h2>Overview</h2>
-    <p>This C++ program determines whether a given number can be represented as the sum of consecutive positive integers starting from 1. If the number can be represented this way, the program prints the sequence of numbers that sum to the given number and marks it as a "Special number". If not, it indicates that the number is not special.</p>
+How It Works
 
-    <h2>Features</h2>
-    <ul>
-        <li>Checks if a number can be represented as a sum of consecutive integers starting from 1.</li>
-        <li>Prints the sequence of numbers if the number is special.</li>
-        <li>Provides appropriate messages for both special and non-special numbers.</li>
-    </ul>
+Input: The program prompts the user to enter an integer.
+Processing: The calSpecial function recursively calculates whether the given number can be represented as a sum of consecutive integers starting from 1.
+Output:
+If the number can be expressed as such a sum, it prints "Special number" followed by the sequence of additions.
+If the number cannot be expressed as such a sum, it prints "Not a special number."
+Functions
 
-    <h2>Files</h2>
-    <ul>
-        <li><code>special_number.cpp</code>: The main C++ source file containing the code.</li>
-    </ul>
+void calSpecial(int val, int &counter, int &sum)
+Parameters:
+val (int): The number to be checked.
+counter (int&): Keeps track of the current integer being added.
+sum (int&): Keeps track of the cumulative sum of integers.
+Description:
+Checks if the current sum equals the given number. If so, prints the sequence.
+If the sum exceeds the number, indicates that it is not a special number.
+Uses recursion to add consecutive integers and update the sum.
+int main()
+Description:
+Prompts the user for input.
+Initializes variables and calls calSpecial to perform the calculation.
 
-    <h2>Usage</h2>
-    <ol>
-        <li><strong>Clone the repository:</strong>
-            <pre><code>git clone https://github.com/yourusername/special-number-checker.git</code></pre>
-        </li>
-        <li><strong>Navigate to the project directory:</strong>
-            <pre><code>cd special-number-checker</code></pre>
-        </li>
-        <li><strong>Compile the code:</strong>
-            <pre><code>g++ -o special_number special_number.cpp</code></pre>
-        </li>
-        <li><strong>Run the executable:</strong>
-            <pre><code>./special_number</code></pre>
-        </li>
-        <li><strong>Enter a number when prompted to check if it's a special number.</strong></li>
-    </ol>
+Example
 
-    <h2>Example</h2>
-    <div class="example-output">
-        <strong>For an input of <code>6</code>:</strong>
-        <pre><code>Enter Number= 
-6
+mathematica
+Copy code
+Enter Number= 
+15
 Special number
-1 + 2 + 3
-</code></pre>
-    </div>
-    <div class="example-output">
-        <strong>For an input of <code>7</code>:</strong>
-        <pre><code>Enter Number= 
-7
-Not a special number.
-</code></pre>
-    </div>
+1 + 2 + 3 + 4 + 5
+In this example, 15 is a special number because it can be represented as the sum of the first five consecutive positive integers (1 + 2 + 3 + 4 + 5).
+
+Notes
+
+The program uses recursion to determine if the number can be represented as a sum of consecutive integers.
+If the input number is less than 1, the output will be "Not a special number" as the sum of positive integers starting from 1 cannot be negative or zero.
