@@ -9,9 +9,11 @@ Processing: The calSpecial function recursively calculates whether the given num
 Output:
 If the number can be expressed as such a sum, it prints "Special number" followed by the sequence of additions.
 If the number cannot be expressed as such a sum, it prints "Not a special number."
+
 Functions
 
 void calSpecial(int val, int &counter, int &sum)
+
 Parameters:
 val (int): The number to be checked.
 counter (int&): Keeps track of the current integer being added.
@@ -20,15 +22,15 @@ Description:
 Checks if the current sum equals the given number. If so, prints the sequence.
 If the sum exceeds the number, indicates that it is not a special number.
 Uses recursion to add consecutive integers and update the sum.
+
 int main()
+
 Description:
 Prompts the user for input.
 Initializes variables and calls calSpecial to perform the calculation.
 
 Example
 
-mathematica
-Copy code
 Enter Number= 
 15
 Special number
