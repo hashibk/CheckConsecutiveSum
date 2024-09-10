@@ -1,28 +1,18 @@
-This C++ code checks if a given number is a "special number" based on a specific criteria. Here's a detailed breakdown of what each part of the code does:
+Overview
 
-Code Breakdown
-Function Definition: calSpecial(int val, int &counter, int &sum)
-Parameters:
-val: The target value to check.
-counter: Keeps track of the current number in the sequence.
-sum: The running total of the sequence.
-Functionality:
-Base Case 1: If sum equals val, the function prints "Special number" and displays the sequence of numbers that add up to val.
-It resets sum to 0 and starts a new sequence from counter to reach val.
-Base Case 2: If sum exceeds val, the function prints "Not a special number" and terminates.
-Recursive Case: If sum is less than val, the function adds the current counter value to sum, increments counter, and calls itself recursively with updated values.
-Main Function: int main()
-Prompts the user to enter a number (x).
-Initializes counter to 1 and sum to 0.
-Calls the calSpecial function with the entered number, counter, and sum.
-Example
-If you input 6, the function will:
+This C++ program defines a function calSpecial which determines if a given number can be represented as the sum of consecutive positive integers starting from 1. If the number can be represented in this way, it prints the sequence of numbers and marks it as a "Special number". Otherwise, it prints "Not a special number."
 
-Start with counter = 1 and sum = 0.
-Add 1 to sum, making sum = 1, and increment counter to 2.
-Add 2 to sum, making sum = 3, and increment counter to 3.
-Add 3 to sum, making sum = 6, which matches val.
-At this point:
+Functionality
 
-It prints "Special number".
-Displays the sequence: 1 + 2 + 3 (which adds up to 6).
+Input: An integer entered by the user.
+Output: A message indicating whether the number is a "Special number" or not, and if it is special, it prints the sequence of numbers that sum to the given number.
+Code Description
+
+calSpecial(int val, int &counter, int &sum): A recursive function that:
+Checks if the current sum equals the input value val. If true, it prints the sequence of numbers leading to that sum and resets the sum and counter.
+Checks if the sum exceeds the input value val. If true, it prints "Not a special number."
+If neither of the above conditions is met, it adds the current counter value to the sum and increments the counter, then recursively calls itself.
+main():
+Prompts the user to input an integer.
+Initializes counter and sum to 1 and 0, respectively.
+Calls calSpecial with the user-provided integer and the initialized counter and sum.
